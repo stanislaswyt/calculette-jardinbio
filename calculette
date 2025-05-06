@@ -1,0 +1,87 @@
+<div class="calculator">
+  <div class="header" onclick="toggleCalc()">Calcule ton besoin en volume</div>
+  <div class="content" id="calcContent">
+    <label for="surface">Surface m&sup2; :</label>
+    <input type="number" id="surface" placeholder="Surface en m&sup2;" min="0" step="any">
+
+    <label for="epaisseur">&Eacute;paisseur (cm) :</label>
+    <input type="number" id="epaisseur" placeholder="&Eacute;paisseur en cm" min="0" step="any">
+
+    <button onclick="calculer()">Calculer</button>
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<style>
+  .calculator {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    background: #495E2D;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  .content {
+    display: none;
+    padding: 20px;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  input[type="number"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button {
+    background: #ee7d45;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #f7941d;
+  }
+  .result {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+</style>
+
+<script>
+  function toggleCalc() {
+    const c = document.getElementById("calcContent");
+    c.style.display = (c.style.display === "block") ? "none" : "block";
+  }
+
+  function calculer() {
+    const surface = parseFloat(document.getElementById("surface").value);
+    const epaisseur = parseFloat(document.getElementById("epaisseur").value);
+
+    if (isNaN(surface) || isNaN(epaisseur) || surface <= 0 || epaisseur <= 0) {
+      alert("Veuillez entrer des valeurs valides et positives.");
+      return;
+    }
+
+    const volumeM3 = (surface * epaisseur) / 100;
+    const volumeL = volumeM3 * 1000;
+
+    document.getElementById("result").innerHTML =
+      `Volume : ${volumeM3.toFixed(2)} m&sup3; (${volumeL.toFixed(0)} L)`;
+  }
+</script>
