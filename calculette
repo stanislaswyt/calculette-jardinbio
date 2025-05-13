@@ -17,70 +17,71 @@
 </div>
 
 <style>
-  .calculator {
-    max-width: 500px;
-    margin: 50px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+.calculator {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .header {
-    color: #495E2D;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 8px 8px 0 0;
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.calculator .header {
+  color: #495E2D;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .header select {
-    padding: 5px;
-    border-radius: 4px;
-    border: none; /* <- SUPPRESSION de la bordure */
-    background-color: transparent;
-  }
+.calculator .header select {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+}
 
-  .content {
-    display: none;
-    padding: 20px;
-  }
+.calculator .content {
+  display: none;
+  padding: 20px;
+}
 
-  label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-  }
+.calculator label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
 
-  input[type="number"], button {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+.calculator input[type="number"],
+.calculator button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-  button {
-    background: #495E2D;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.calculator button {
+  background: #495E2D;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  button:hover {
-    background: #f7941d;
-  }
+.calculator button:hover {
+  background: #f7941d;
+}
 
-  .result {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 16px;
-  }
+.calculator .result {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
 </style>
 
 <script>
